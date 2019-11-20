@@ -90,9 +90,15 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="67M-PF-geD">
                                 <rect key="frame" x="18" y="179" width="378" height="31"/>
+                                <connections>
+                                    <action selector="sliderTouched:" destination="5lc-HW-4nb" eventType="valueChanged" id="ak0-ah-Z1d"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XZN-Aj-KBm">
                                 <rect key="frame" x="160" y="259" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperTouched:" destination="5lc-HW-4nb" eventType="valueChanged" id="MRW-61-JXB"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-ME-X22">
                                 <rect key="frame" x="20" y="311" width="374" height="21"/>
@@ -100,6 +106,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-nc-X2V">
+                                <rect key="frame" x="181.66666666666666" y="352" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <segue destination="MLs-sR-CX1" kind="unwind" unwindAction="updateFontWithSegue:" id="cKQ-be-DgK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -113,7 +126,9 @@
                             <constraint firstItem="4uc-zv-z9o" firstAttribute="trailing" secondItem="67M-PF-geD" secondAttribute="trailing" constant="20" id="bMh-Tj-RR5"/>
                             <constraint firstItem="67M-PF-geD" firstAttribute="top" secondItem="OUR-0I-Icw" secondAttribute="bottom" constant="20" id="brK-4O-fha"/>
                             <constraint firstItem="4uc-zv-z9o" firstAttribute="trailing" secondItem="OUR-0I-Icw" secondAttribute="trailing" constant="20" id="cm4-3C-37p"/>
+                            <constraint firstItem="HCp-nc-X2V" firstAttribute="centerX" secondItem="EJ3-ME-X22" secondAttribute="centerX" id="cow-Lc-mZ9"/>
                             <constraint firstItem="OUR-0I-Icw" firstAttribute="top" secondItem="4uc-zv-z9o" secondAttribute="top" constant="50" id="j8l-p0-ikr"/>
+                            <constraint firstItem="HCp-nc-X2V" firstAttribute="top" secondItem="EJ3-ME-X22" secondAttribute="bottom" constant="20" id="sZs-Uc-h2C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4uc-zv-z9o"/>
                     </view>
@@ -123,15 +138,18 @@
                         <outlet property="changeSlider" destination="67M-PF-geD" id="k6L-ma-1xF"/>
                         <outlet property="changeStepper" destination="XZN-Aj-KBm" id="FDz-Kw-4fB"/>
                         <outlet property="previewFont" destination="EJ3-ME-X22" id="dev-mA-cFg"/>
+                        <outlet property="updateButton" destination="HCp-nc-X2V" id="tRf-gC-teT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GET-dd-kvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MLs-sR-CX1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1807.2463768115942" y="134.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fSr-Zj-bI3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAs-2D-dIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z26-7F-WHA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BrE-H8-eF2">
@@ -143,7 +161,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="51H-xm-j8h"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RAs-2D-dIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>

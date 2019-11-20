@@ -20,6 +20,12 @@ class ViewController: UIViewController {
         data = Movie.allMovies
     }
     
+    @IBAction func updateFont (segue: UIStoryboardSegue) {
+        guard let vc = segue.source as? SettingViewController else {
+            fatalError()
+        }
+        
+    }
     
 }
 
