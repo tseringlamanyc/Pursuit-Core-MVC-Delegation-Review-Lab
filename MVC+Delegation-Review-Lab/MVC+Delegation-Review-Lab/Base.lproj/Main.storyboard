@@ -110,7 +110,7 @@
                                 <rect key="frame" x="181.66666666666666" y="352" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <segue destination="MLs-sR-CX1" kind="unwind" unwindAction="updateFontWithSegue:" id="cKQ-be-DgK"/>
+                                    <segue destination="MLs-sR-CX1" kind="unwind" unwindAction="updateFontWithSegue:" id="5Df-Bl-Z1i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -149,7 +149,6 @@
         <!--Navigation Controller-->
         <scene sceneID="fSr-Zj-bI3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RAs-2D-dIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z26-7F-WHA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BrE-H8-eF2">
@@ -161,6 +160,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="51H-xm-j8h"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAs-2D-dIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>

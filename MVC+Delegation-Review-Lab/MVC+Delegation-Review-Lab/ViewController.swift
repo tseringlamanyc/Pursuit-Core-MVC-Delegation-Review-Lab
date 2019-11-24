@@ -31,21 +31,26 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc1 = segue.destination as? SettingViewController else {
+        guard let settingVC = segue.destination as? SettingViewController else {
             fatalError()
         }
-        vc1.fontSize = fontSize
+        settingVC.defaultFont = fontSize
     }
+   
     
     @IBAction func updateFont (segue: UIStoryboardSegue) {
-        guard let vc = segue.source as? SettingViewController else {
+        guard let settingVC = segue.source as? SettingViewController else {
             fatalError()
         }
-        fontSize = Double(vc.fontSize)
+        fontSize = settingVC.defaultFont
     }
+    
+ 
+    
 }
 
 extension ViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
     }
