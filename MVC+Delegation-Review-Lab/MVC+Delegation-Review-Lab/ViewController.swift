@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         guard let settingVC = segue.source as? SettingViewController else {
             fatalError()
         }
-        fontSize = settingVC.defaultFont
+        settingVC.delegate = self
     }
     
  
@@ -64,5 +64,13 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-Light", size: CGFloat(fontSize))
         return cell
     }
+}
+
+extension ViewController: ChangingFontDelegate {
+    func changeFontSize(vc: SettingViewController) {
+        self.fontSize = vc.fontSize
+    }
+    
+
 }
 

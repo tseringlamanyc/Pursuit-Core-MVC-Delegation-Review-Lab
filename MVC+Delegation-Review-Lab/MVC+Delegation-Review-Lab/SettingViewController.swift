@@ -8,8 +8,12 @@
 
 import UIKit
 
+protocol ChangingFontDelegate: AnyObject {
+    var fontSize: Double { get set }
+    func changeFontSize(vc: SettingViewController)
+}
+
 class SettingViewController: UIViewController {
-    
     
     @IBOutlet weak var changeFontLabel: UILabel!
     @IBOutlet weak var changeSlider: UISlider!
@@ -19,12 +23,15 @@ class SettingViewController: UIViewController {
         
     var data: Movie!
     
-    var fontSize: Double = 16.0   {
+    weak var delegate: ChangingFontDelegate?
+    
+    public var fontSize: Double = 16.0   {
         didSet {
             self.previewFont.text = "Font Size \(String(format: "%0.f", fontSize))"
             defaultFont = fontSize
             changeSlider.value = Float(fontSize)
             changeStepper.value = fontSize
+            delegate?.changeFontSize(vc: self)
         }
     }
     
@@ -60,4 +67,5 @@ class SettingViewController: UIViewController {
         fontSize = sender.value
 //        changeSlider.value = Float(sender.value)
     }
+    
 }
