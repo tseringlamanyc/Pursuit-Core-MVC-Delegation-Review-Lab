@@ -43,8 +43,7 @@ class SettingViewController: UIViewController {
         configureSlider()
         configureStepper()
     }
-    
-    
+
     func configureStepper() {
         changeStepper.minimumValue = 5.0
         changeStepper.maximumValue = 30.0

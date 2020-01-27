@@ -40,10 +40,9 @@ class ViewController: UIViewController {
    
     
     @IBAction func updateFont (segue: UIStoryboardSegue) {
-        guard let settingVC = segue.source as? SettingViewController else {
+        guard let _ = segue.source as? SettingViewController else {
             fatalError()
         }
-        settingVC.delegate = self
    }
 }
 
