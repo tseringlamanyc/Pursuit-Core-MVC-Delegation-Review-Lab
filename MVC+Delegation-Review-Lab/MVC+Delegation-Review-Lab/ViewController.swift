@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         guard let settingVC = segue.destination as? SettingViewController else {
             fatalError()
         }
+        settingVC.delegate = self
         settingVC.defaultFont = fontSize
     }
    
@@ -43,10 +44,7 @@ class ViewController: UIViewController {
             fatalError()
         }
         settingVC.delegate = self
-    }
-    
- 
-    
+   }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -68,9 +66,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: ChangingFontDelegate {
     func changeFontSize(vc: SettingViewController) {
-        self.fontSize = vc.fontSize
+        self.fontSize = vc.defaultFont
     }
-    
-
 }
 

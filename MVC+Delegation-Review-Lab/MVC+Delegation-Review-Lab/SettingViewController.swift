@@ -60,12 +60,10 @@ class SettingViewController: UIViewController {
 
     @IBAction func sliderTouched(_ sender: UISlider) {
         fontSize = Double(sender.value)
-//        changeStepper.value = Double(sender.value)
     }
     
     @IBAction func stepperTouched(_ sender: UIStepper) {
         fontSize = sender.value
-//        changeSlider.value = Float(sender.value)
     }
     
 }
